@@ -19,5 +19,9 @@ wss.on("connection", function(socket){
   setInterval(()=>{
     socket.send("Meow Meow : "+ Math.random()*10);
   },1000)
-  // socket.send("hello");
+
+  //receive msg from client
+  socket.on("message", (e)=>{
+    console.log(e.toString());
+  })
 })
